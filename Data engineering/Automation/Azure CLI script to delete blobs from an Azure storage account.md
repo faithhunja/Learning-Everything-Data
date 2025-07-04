@@ -1,4 +1,4 @@
-The following Azure CLI script will enable you to delete all blobs from an Azure storage account.
+### Deleting blobs from an Azure storage account using Azure CLI
 
 First, start by setting the necessary variables.
 

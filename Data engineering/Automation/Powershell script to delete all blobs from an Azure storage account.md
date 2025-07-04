@@ -1,4 +1,4 @@
-The following Powershell script will enable you to delete all blobs from an Azure storage account.
+### Deleting blobs from an Azure storage account using Windows Powershell
 
 First, run the code below to install Az to run the commands.
 
