@@ -1,3 +1,4 @@
+-- Building a table called players
 INSERT INTO players
 WITH years AS (
     SELECT *
