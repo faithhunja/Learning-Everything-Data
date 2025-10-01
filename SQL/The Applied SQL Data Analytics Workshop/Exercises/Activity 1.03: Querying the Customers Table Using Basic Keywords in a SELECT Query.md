@@ -1,4 +1,4 @@
-## Activity 1.03: Querying the customers Table Using Basic Keywords in a SELECT Query
+## Activity 1.03: Querying the Customers Table Using Basic Keywords in a SELECT Query
 
 One day, your manager at ZoomZoom calls you in and tells you that the marketing department has decided that they want to do a series of marketing campaigns to help promote a sale. You will need to send queries to the manager to pull the data. The following are the steps to complete the activity:
 
