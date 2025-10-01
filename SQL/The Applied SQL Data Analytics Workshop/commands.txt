@@ -23,7 +23,10 @@ $ psql -U username
 $ CREATE DATABASE sqlda;
 
 # To restore a database from a dump file
-# Send the \q command to exit the psql terminal
+# First exit the psql terminal
+
+$ \q
+
 # Replace "sqlda" with your database name and 
 # "/Downloads/data.dump" with the path to your dump file
 
@@ -32,3 +35,15 @@ $ psql -U postgres -d sqlda < "/Downloads/data.dump"
 # To log in to your database sqlda as the postgres user
 
 $ psql -U postgres -d sqlda
+
+# To list the databases in a postgres instance using psql
+
+$ \l
+
+# To connect to a database of choice using psql
+
+$ \c sqlda
+
+# To log out of the docker container bash terminal
+
+$ exit
