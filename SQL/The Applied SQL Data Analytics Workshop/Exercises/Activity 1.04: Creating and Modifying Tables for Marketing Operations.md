@@ -30,7 +30,7 @@ ADD COLUMN event text;
 
 ```sql
 UPDATE customers_nyc
-SET event = 'Thank-you party';
+SET event = 'thank-you party';
 ```
 
 5. You've told the manager you've completed these steps. He tells the marketing operations team, who then uses the data to launch a marketing campaign. The marketing manager thanks you and then asks you to delete the customers_nyc table.
