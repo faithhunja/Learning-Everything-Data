@@ -28,7 +28,7 @@ The steps of a SELECT query are as follows:
 - The WHERE clause - limits the amount of data returned; usually found after the FROM clause of a single SELECT statement.
 - The AND/OR clause - checks if multiple conditions have been met at once.
 - The IN/NOT IN clause - returns all the values that are/are not in a list of values.
-- The ORDER BY clause - specifies an order sequence for rows returned. It is ascending order by default. You can order by multiple columns.
+- The ORDER BY clause - specifies an order sequence for rows returned. It is ascending order by default. You can order by multiple columns. ORDER BY can take a numeric value, which represents the order of the column. For example, ORDER BY 1 where 1 represents the first column.
 - The LIMIT clause - limits the number of rows returned.
 - The IS NULL/IS NOT NULL clause - finds rows where data is not filled/is filled for a certain column.
 
