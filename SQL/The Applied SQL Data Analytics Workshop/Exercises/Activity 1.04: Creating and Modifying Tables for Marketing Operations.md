@@ -1,6 +1,9 @@
 ## Activity 1.04: Creating and Modifying Tables for Marketing Operations
 
-In this activity, you will test your ability to create and modify tables using SQL. You did a great job of pulling data for the marketing team. However, the marketing manager, who you helped, realized that they had made a mistake. It turns out that instead of just the query, the manager needs to create a new table in the company's analytics database. Furthermore, they need to make some changes to the data that is present in the customers table. It is your job to help the marketing manager with the table:
+In this activity, you will test your ability to create and modify tables using SQL. 
+
+You did a great job of pulling data for the marketing team. However, the marketing manager, who you helped, realized that they had made a mistake. It turns out that instead of just the query, the manager needs to create a new table in the company's analytics database. Furthermore, they need to make some changes to the data that is present in the customers table. 
+It is your job to help the marketing manager with the table:
 
 1. Create a new table called customers_nyc that pulls all the rows from the customers table where the customer lives in New York City in the state of New York.
 
