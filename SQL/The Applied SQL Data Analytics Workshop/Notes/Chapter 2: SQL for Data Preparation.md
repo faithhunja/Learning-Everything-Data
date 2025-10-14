@@ -79,23 +79,48 @@ INNER JOIN {table2} AS {t2} ON {t1}.{common_key_1} = {t2}.{common_key_2};
 (
 SELECT {column1}, {column2}, {column3}
 FROM {table1}
-WHERE ...
+WHERE {conditional}
 )
 UNION
 (
 SELECT {column1}, {column2}, {column3}
 FROM {table2}
-WHERE ...
+WHERE {conditional}
 )
-ORDER BY {order1};
+ORDER BY {column1};
 ```
 
 - Using `UNION` has some caveats:
   - `UNION` requires that the subqueries there have the same name columns and the same data types for the column. If it does not, the query will not run. 
   - `UNION` technically may not return all the rows from its subqueries. By default, `UNION` removes all duplicate rows in the output. If you want to retain the duplicate rows, it is preferable to use the `UNION ALL` keyword.
 
-### Common Table Expressions
+### Common Table Expressions (CTEs)
 
+- They establish temporary tables using the `WITH` clause.
+- CTEs are recursive, meaning that they can reference themselves.
+
+```sql
+-- The query below can be used to find California-based salespeople:
+SELECT *
+FROM salespeople
+INNER JOIN (
+    SELECT * FROM dealerships
+    WHERE dealerships.state = 'CA'
+    ) d
+  ON d.dealership_id = salespeople.dealership_id
+ORDER BY 1;
+
+-- The query above can be written using CTEs as shown below:
+WITH d as (
+    SELECT * FROM dealerships
+    WHERE dealerships.state = 'CA'
+    )
+SELECT *
+FROM salespeople
+INNER JOIN d ON d.dealership_id = salespeople.dealership_id
+ORDER BY 1;
+```
 
 ## Transforming Data
+
 
