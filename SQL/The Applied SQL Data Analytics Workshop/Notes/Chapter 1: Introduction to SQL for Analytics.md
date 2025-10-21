@@ -41,7 +41,7 @@ CREATE TABLE {table_name} (
 {column_name_1} {data_type_1} {column_constraint_1},
 {column_name_2} {data_type_2} {column_constraint_2},
 {column_name_3} {data_type_3} {column_constraint_3},
-   
+...
 {column_name_last} {data_type_last} {column_constraint_last},
 );
 ```
