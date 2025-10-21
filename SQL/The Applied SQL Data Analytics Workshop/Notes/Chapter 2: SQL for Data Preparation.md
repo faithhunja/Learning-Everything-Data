@@ -101,26 +101,50 @@ ORDER BY {column1};
 
 ```sql
 -- The query below can be used to find California-based salespeople:
+
 SELECT *
-FROM salespeople
+FROM salespeople s
 INNER JOIN (
     SELECT * FROM dealerships
     WHERE dealerships.state = 'CA'
     ) d
-  ON d.dealership_id = salespeople.dealership_id
+  ON d.dealership_id = s.dealership_id
 ORDER BY 1;
 
 -- The query above can be written using CTEs as shown below:
+
 WITH d as (
     SELECT * FROM dealerships
     WHERE dealerships.state = 'CA'
     )
 SELECT *
-FROM salespeople
-INNER JOIN d ON d.dealership_id = salespeople.dealership_id
+FROM salespeople s
+INNER JOIN d ON d.dealership_id = s.dealership_id
 ORDER BY 1;
 ```
 
 ## Transforming Data
 
+- Functions are keywords that take in inputs (such as a column or a scalar value) and change those inputs into some sort of output.
+- We can use functions to transform the results of a query into a form we want, for example, by removing, substituting, or mapping values to other values.
+
+### CASE WHEN Function
+
+- CASE WHEN is a function that allows a query to map various values in a column to other values. 
+- The general format of a CASE WHEN statement is as follows:
+
+```sql
+CASE WHEN condition1 THEN value1
+WHEN condition2 THEN value2
+…
+WHEN conditionX THEN valueX
+ELSE else_value END;
+```
+
+- Here, condition1 and condition2, through conditionX, are Boolean conditions; value1 and value2, through valueX, are values to map the Boolean conditions; and else_value is the value that is mapped if none of the Boolean conditions are met.
+- For each row, the program starts at the top of the CASE WHEN statement and evaluates the first Boolean condition, then runs through each Boolean condition in order.
+- For the first condition from the start of the statement that evaluates as true, the statement will return the value associated with that condition. 
+- If none of the statements evaluate as true, then the value associated with the ELSE statement will be returned.
+
+### COALESCE Function
 
