@@ -7,8 +7,7 @@ To complete this exercise, perform the following steps:
 
 1. Open your favorite SQL client and connect to the sqlda database.
 
-2. Create a query that will produce a customer_id column and a column called
-region, with the states categorized as in the following scenario:
+2. Create a query that will produce a customer_id column and a column called region, with the states categorized as in the following scenario:
 
 ```sql
 SELECT customer_id,
