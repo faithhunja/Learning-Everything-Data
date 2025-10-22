@@ -148,3 +148,47 @@ ELSE else_value END;
 
 ### COALESCE Function
 
+- Used to replace the NULL values with a standard value.
+- COALESCE allows you to list any number of columns and scalar values, and, if the first value in the list is NULL, it will try to fill it in with the second value. 
+- The COALESCE function will keep continuing down the list of values until it hits a non-NULL value. 
+- If all values in the COALESCE function are NULL, then the function returns NULL.
+
+```sql
+-- A query to return the first name, last name and phone number of all male customers
+
+SELECT first_name, last_name, phone
+FROM customers
+WHERE gender = 'M';
+
+-- A query using the COALESCE function to replace all NULL phone numbers with 'NO PHONE'
+
+SELECT first_name, last_name, COALESCE(phone, 'NO PHONE') AS phone
+FROM customers
+WHERE gender = 'M';
+```
+
+### NULLIF Function
+
+- NULLIF is, in a sense, the opposite of COALESCE. NULLIF is a two-value function and will return NULL if the first value equals the second value.
+- The NULLIF function returns a null value if value1 equals value2; otherwise it returns value1.
+
+```sql
+NULLIF(value1, value2) AS column_name
+```
+
+### LEAST/GREATEST Function
+
+- Each function takes any number of values and returns the least or the greatest of the values, respectively.
+- The simple use of this variable would be to replace the value if it's too high or low.
+- The LEAST function selects the smallest value from a list of any number of expressions.
+- Likewise, The GREATEST function selects the largest value from a list of any number of expressions.
+
+```sql
+LEAST(value, column) AS column_name
+```
+
+### Casting Function
+
+
+
+### DISTINCT and DISTINCT ON Function
