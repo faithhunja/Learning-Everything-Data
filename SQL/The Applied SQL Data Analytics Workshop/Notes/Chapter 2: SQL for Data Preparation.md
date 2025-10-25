@@ -189,6 +189,43 @@ LEAST(value, column) AS column_name
 
 ### Casting Function
 
+- Casting is used to change the data type of a column within a query.
+- This is done using the `column::datatype` format, where `column` is the column name, and `datatype` is the data type you want to change the column to.
+- Not every data type can be cast to a specific data type. For example, datetime cannot be cast to float types.
 
+### DISTINCT and DISTINCT ON Functions
 
-### DISTINCT and DISTINCT ON Function
+- The `DISTINCT` keyword can be used to determine the unique values in a column or group of columns.
+- It can also be used with multiple columns to get all of the distinct column combinations present.
+
+```sql
+-- To find all distinct years and what product types were released for those model years
+
+SELECT DISTINCT year, product_type
+FROM products
+ORDER BY 1, 2;
+```
+
+- `DISTINCT ON` allows you to ensure that only one row is returned and one or more columns are always unique in the set.
+
+```sql
+SELECT DISTINCT ON (distinct_column) -- distinct_column is the column or columns you want to be distinct in your query
+column_1,
+column_2,
+…
+column_n -- column_1 through column_n are the columns you want returned by the query
+FROM table
+ORDER BY order_column; -- order_column allows you to determine the first row that will be returned if multiple columns have the same value for distinct_column
+                       -- the first column mentioned should be distinct_column. If an ORDER BY clause is not specified, the first row will be decided randomly.
+```
+
+- For example, if we want to get a unique list of salespeople where each salesperson has a unique first name, there may be two or more salespeople who have the same first name. In that case, we will return only the one that started working at the company earlier. This query would look as follows:
+
+```sql
+-- Every row returned has a distinct username (since the first_name is not repeated)
+
+SELECT DISTINCT ON (first_name)
+*
+FROM salespeople
+ORDER BY first_name, hire_date;
+```
