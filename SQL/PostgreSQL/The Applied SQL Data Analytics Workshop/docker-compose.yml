@@ -10,7 +10,7 @@ services:
     ports:
       - "${HOST_PORT}:5432"
     volumes:
-      - ./:/SQL/The Applied SQL Data Analytics Workshop/
+      - ./:/SQL/PostgreSQL/The Applied SQL Data Analytics Workshop/
       - postgres-data:/var/lib/postgresql/data
 
 volumes:
