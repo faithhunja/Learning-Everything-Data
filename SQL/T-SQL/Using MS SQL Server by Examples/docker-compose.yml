@@ -1,0 +1,18 @@
+services:
+    sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        restart: on-failure
+        container_name: ${DOCKER_CONTAINER}
+        hostname: ${DOCKER_CONTAINER}
+        environment:
+            - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+            - ACCEPT_EULA=Y
+            - MSSQL_PID=Express
+        ports:
+            - "${HOST_PORT}:1433"
+        volumes:
+            - sqlserver-data:/var/lib/mssql/data
+            - ./:/data
+        
+volumes:
+    sqlserver-data:
